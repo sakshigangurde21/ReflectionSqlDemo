@@ -3,7 +3,6 @@ using System.Reflection;
 using ReflectionSqlLibrary;  // reference to your library
 using Microsoft.Data.SqlClient;
 
-
 namespace ReflectionSqlConsole
 {
     class Program
@@ -34,11 +33,11 @@ namespace ReflectionSqlConsole
             // Remove last comma and add closing bracket
             createTableQuery = createTableQuery.TrimEnd(',', ' ') + ")";
 
-            // 5. Print the query to console
+            // Print the query to console
             Console.WriteLine("Generated SQL Query:");
             Console.WriteLine(createTableQuery);
 
-            // 6. Execute the query in SQL Server
+            // Execute the query in SQL Server
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(createTableQuery, conn);
