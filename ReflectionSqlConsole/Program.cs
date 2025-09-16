@@ -10,17 +10,17 @@ namespace ReflectionSqlConsole
     {
         static void Main(string[] args)
         {
-            // 1. SQL Server connection string
+            // SQL Server connection string
             string connectionString = @"Data Source=localhost;Initial Catalog=SubjectDB;User ID=sakshi21;Password=sak123;Trust Server Certificate=True";
 
-            // 2. Get type of Subject class
+            // Get type of Subject class
             Type type = typeof(Subject);
             string tableName = type.Name;
 
-            // 3. Start building CREATE TABLE query
+            // Start building CREATE TABLE query
             string createTableQuery = $"CREATE TABLE {tableName} (";
 
-            // 4. Read properties using Reflection
+            // Read properties using Reflection
             PropertyInfo[] properties = type.GetProperties();
             foreach (var prop in properties)
             {
